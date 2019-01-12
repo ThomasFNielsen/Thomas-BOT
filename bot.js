@@ -7,9 +7,22 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Hey') {
-    	message.reply('Heeey :thomas26Love: ');
+    	message.reply('Heeey, min ven!');
   	}
+    
 });
+
+client.on('message', message => {
+    if (message.content === 'Godmorgen') {
+    	message.reply('Godmorgen, har du sovet godt?');
+  	}
+    
+    });
+
+client.on('message', message => {
+    if (message.content === 'Godaften') {
+    	message.reply('Godaften, har du haft en god dag?');
+  	}
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
