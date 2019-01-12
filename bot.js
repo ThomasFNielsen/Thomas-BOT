@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on("guildMemberAdd", function(member)
+bot.on("guildMemberAdd", function(member)
 {   
-    letmemberRole = member.guild.roles.find("name", "Medlem")
+    letmemberRole = member.guild.roles.find("name", "Medlem");
     {
         member.addRole(memberRole);
         member.send("Velkommen til ThomasFNielsen's discord!");
-        }
+    }
 });
 
 client.on('ready', () => {
