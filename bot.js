@@ -16,10 +16,8 @@ client.on("guildMemberAdd", (member) => {
         invdat.forEach((invite, key, map) => {
             console.log(invite.code)
             if (invite.code === "PBE7Qnc") {
-                return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+                return member.addRole(member.guild.roles.find('name', "MEDLEM"));
             }
-        })
-    })
 });
 
 client.on('message', message => {
