@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('I am ready!');
 
-client.on("guildMemberAdd", function(member)
+bot.on("guildMemberAdd", function(member)
 {   
     letmemberRole = member.guild.roles.find("name", "Medlem");
     {
