@@ -6,8 +6,8 @@ client.on('ready', () => {
     
 });
 
-bot.on("guildMemberAdd", (member) => {
-    letmemberRole = member.guild.roles.find("name", "MEDLEM");
+client.on("guildMemberAdd", (member) => {
+    let memberRole = member.guild.roles.find("name", "MEDLEM");
     }
         member.addRole(memberRole);
 });
