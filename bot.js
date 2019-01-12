@@ -8,11 +8,7 @@ client.on("guildMemberAdd", function(member)
     {
         member.addRole(memberRole);
         memberChannel.send(member + " - Velkommen til ThomasFNielsen's discord!");
-        
-
-
-
-}
+        }
 });
 
 client.on('ready', () => {
