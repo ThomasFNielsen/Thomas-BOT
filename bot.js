@@ -19,7 +19,13 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === 'Godmorgen') {
-    	message.channel.send(message.author + ' - Godmorgen, har du sovet godt?');
+    	message.channel.send(message.author + ' - **Godmorgen, har du sovet godt?**');
+  	    }
+});
+
+client.on('message', message => {
+    if (message.content === 'godmorgen') {
+    	message.channel.send(message.author + ' - **Godmorgen, har du sovet godt?**');
   	    }
 });
 
