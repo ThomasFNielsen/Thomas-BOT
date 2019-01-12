@@ -6,19 +6,24 @@ client.on('ready', () => {
     
 });
 
-bot.on("guildMemberAdd", (member) => {
+client.on('guildMemberAdd', member => {
+    // To compare, we need to load the current invite list.
+    member.guild.fetchInvites().then(guildInvites => {
+        // This is the *existing* invites for the guild.
+        const ei = invites[member.guild.id];
 
-    if (member.id == bot.user.id) {
-        return;
-    }
-    let guild = member.guild
-    guild.fetchInvites().then(invdat => {
-        invdat.forEach((invite, key, map) => {
-            console.log(invite.code)
-            if (invite.code === "PBE7Qnc") {
-                return member.addRole(member.guild.roles.find('name', "MEDLEM"));
-            }
-});
+        // Update the cached invites
+        invites[member.guild.id] = guildInvites;
+
+        // Look through the invites, find the one for which the uses went up.
+        const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+        console.log(invite.code)
+
+        if (invite.code === "PBE7Qnc") {
+            return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+        }
+    });
 
 client.on('message', message => {
     if (message.content === 'Hey') {
