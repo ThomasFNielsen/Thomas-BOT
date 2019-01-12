@@ -4,10 +4,9 @@ const client = new Discord.Client();
 client.on("guildMemberAdd", function(member)
 {   
     letmemberRole = member.guild.roles.find("name", "Medlem")
-    letmemberChannel = member.guild.channels.find('name', 'medlemmer');
     {
         member.addRole(memberRole);
-        memberChannel.send(member + " - Velkommen til ThomasFNielsen's discord!");
+        member.send("Velkommen til ThomasFNielsen's discord!");
         }
 });
 
