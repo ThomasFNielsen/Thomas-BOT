@@ -122,9 +122,9 @@ client.on('message', message => {
 });
     
 client.on('message', message => {
-    if (message.content === '!keyboard')
+    if (message.content === '!keyboard') {
     	message.channel.send(message.author + ' - Thomas' tastatur: Black Pulse - The Commander in Chief. | Sponsoreret af: Black Pulse!');
-  	    
+  	    }
 });
 
 // THIS  MUST  BE  THIS  WAY
