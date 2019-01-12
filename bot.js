@@ -7,9 +7,9 @@ client.on('ready', () => {
 
 client.on("guildMemberAdd", function(member)
 {
-    let memberChannel = member.guild.channels.find('name', 'medlemmer');
     memberChannel.send(member + " - Velkommen til ThomasFNielsen's discord!")
-    let memberRole = member.guild.roles.find("name", "Medlem");
+    letmemberRole = member.guild.roles.find("name", "Medlem");
+    letmemberChannel = member.guild.channels.find('name', 'medlemmer');
     member.addRole(memberRole);
 });
 
