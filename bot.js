@@ -7,25 +7,8 @@ client.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", (member) => {
-
-    if (member.id == bot.user.id) {
-        return;
+    letmemberRole = member.guild.roles.find("name", "MEDLEM");
     }
-    let guild = member.guild
-    guild.fetchInvites().then(invdat => {
-        invdat.forEach((invite, key, map) => {
-            console.log(invite.code)
-            if (invite.code === "PBE7Qnc") {
-                return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
-            }
-        })
-    })
-});
-
-bot.on("guildMemberAdd", function(member)
-{
-    let memberRole = member.guild.roles.find("name", "MEDLEM");
-    {
         member.addRole(memberRole);
 });
         
