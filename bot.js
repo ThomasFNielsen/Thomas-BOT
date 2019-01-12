@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Hey') {
-    	message.reply('Heeey, min ven!');
+    	message.channel.send(message.authopr + ' - Heeey, min ven!');
   	    }
 });
 
