@@ -6,7 +6,7 @@ client.on('ready', () => {
     
 });
 
-client.on("guildMemberAdd", (member) => {
+bot.on("guildMemberAdd", (member) => {
 
     if (member.id == bot.user.id) {
         return;
