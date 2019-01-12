@@ -24,6 +24,7 @@ client.on('guildMemberAdd', member => {
             return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
         }
     });
+});
 
 client.on('message', message => {
     if (message.content === 'Hey') {
