@@ -90,11 +90,40 @@ client.on('message', message => {
     if (message.content === 'godaften') {
     	message.channel.send(message.author + ' - Godaften, har du haft en god dag?');
   	    }
+
+client.on('message', message => {
+    if (message.content === '!cam') {
+    	message.channel.send(message.author + ' - Thomas' kamera: Logitech C920.');
+  	    }
 });
 
 client.on('message', message => {
-    if (message.content === '!gear') {
-    	message.channel.send(message.author + ' - !cam, !headset, !mic, !micarm, !keyboard');
+    if (message.content === '!headset') {
+    	message.channel.send(message.author + ' - Thomas' headset: Audio Technica ATH-M50X.');
+  	    }
+});
+
+client.on('message', message => {
+    if (message.content === '!mic') {
+    	message.channel.send(message.author + ' - Thomas' mikrofon: Røde NT-USB.');
+  	    }
+});
+
+client.on('message', message => {
+    if (message.content === '!micarm') {
+    	message.channel.send(message.author + ' - Thomas' mikrofonarm: Røde PSA-1.');
+  	    }
+});
+
+client.on('message', message => {
+    if (message.content === '!mus') {
+    	message.channel.send(message.author + ' - Thomas' mus: Logitech G502.');
+  	    }
+});
+    
+client.on('message', message => {
+    if (message.content === '!keyboard') {
+    	message.channel.send(message.author + ' - Thomas' tastatur: Black Pulse - The Commander in Chief. | Sponsoreret af: Black Pulse!');
   	    }
 });
 
