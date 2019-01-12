@@ -6,15 +6,29 @@ client.on('ready', () => {
     
 });
 
-client.on("guildMemberAdd", function(member)
-{
-    let memberRole = member.guild.roles.find("name", "Medlem");
-    {
-        member.addRole(memberRole);
-        member.send("Velkommen til ThomasFNielsen's discord!");
-        }
+bot.on("guildMemberAdd", (member) => {
+
+    if (member.id == bot.user.id) {
+        return;
+    }
+    let guild = member.guild
+    guild.fetchInvites().then(invdat => {
+        invdat.forEach((invite, key, map) => {
+            console.log(invite.code)
+            if (invite.code === "PBE7Qnc") {
+                return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+            }
+        })
+    })
 });
 
+bot.on("guildMemberAdd", function(member)
+{
+    let memberRole = member.guild.roles.find("name", "MEDLEM");
+    {
+        member.addRole(memberRole);
+});
+        
 client.on('message', message => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey, min ven!');
