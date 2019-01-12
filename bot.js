@@ -6,12 +6,22 @@ client.on('ready', () => {
     
 });
 
-client.on("guildMemberAdd", (member) => {
-    let memberRole = member.guild.roles.find("name", "MEDLEM");
+bot.on("guildMemberAdd", (member) => {
+
+    if (member.id == bot.user.id) {
+        return;
     }
-        member.addRole(memberRole);
+    let guild = member.guild
+    guild.fetchInvites().then(invdat => {
+        invdat.forEach((invite, key, map) => {
+            console.log(invite.code)
+            if (invite.code === "PBE7Qnc") {
+                return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+            }
+        })
+    })
 });
-        
+
 client.on('message', message => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey, min ven!');
