@@ -6,6 +6,15 @@ client.on('ready', () => {
     
 });
 
+client.on("guildMemberAdd", function(member)
+{
+    let memberRole = member.guild.roles.find("name", "Medlem");
+    {
+        member.addRole(memberRole);
+        member.send("Velkommen til ThomasFNielsen's discord!");
+        }
+});
+
 client.on('message', message => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey, min ven!');
