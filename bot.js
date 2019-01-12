@@ -95,11 +95,11 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === '!gear') {
     	message.channel.send(message.author + ' - 
-                             › !cam
-                             › !headset
-                             › !mic
-                             › !micarm
-                             › !keyboard');
+› !cam
+› !headset
+› !mic
+› !micarm
+› !keyboard');
   	    }
 });
 
