@@ -12,14 +12,26 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.content === 'Goddag') {
+    	message.channel.send(message.author + ' - Goddag, min ven!');
+  	    }
+});
+
+client.on('message', message => {
     if (message.content === 'Godmorgen') {
-    	message.reply('Godmorgen, har du sovet godt?');
+    	message.channel.send(message.author + ' - Godmorgen, har du sovet godt?');
   	    }
 });
 
 client.on('message', message => {
     if (message.content === 'Godaften') {
-    	message.reply('Godaften, har du haft en god dag?');
+    	message.channel.send(message.author + ' - Godaften, har du haft en god dag?');
+  	    }
+});
+
+client.on('message', message => {
+    if (message.content === 'test') {
+    	message.#notifikationer.send(test');
   	    }
 });
 
