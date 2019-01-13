@@ -71,5 +71,59 @@ client.on('ready', () => {
     });
 });
 
+client.on('guildMemberAdd', member => {
+    // To compare, we need to load the current invite list.
+    member.guild.fetchInvites().then(guildInvites => {
+        // This is the *existing* invites for the guild.
+        const ei = invites[member.guild.id];
+
+        // Update the cached invites
+        invites[member.guild.id] = guildInvites;
+
+        // Look through the invites, find the one for which the uses went up.
+        const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+        console.log(invite.code)
+
+        if (invite.code === "PBE7Qnc") {
+            return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+        }
+    });
+});
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+const newUsers = [];
+
+client.on("ready", () => {
+  console.log("I am ready!");
+});
+
+client.on("message", (message) => {
+  if (message.content.startsWith("ping")) {
+    message.channel.send("pong!");
+  }
+});
+
+client.on("guildMemberAdd", (member) => {
+  const guild = member.guild;
+  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+  newUsers[guild.id].set(member.id, member.user);
+
+  if (newUsers[guild.id].size > 10) {
+    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
+    guild.channels.find(channel => channel.name === "nye-medlemmer").send("test123\n" + userlist);
+    newUsers[guild.id].clear();
+  }
+});
+
+client.on("guildMemberRemove", (member) => {
+  const guild = member.guild;
+  if (newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
+});
+
+client.login("NTMxMDk4MzgxNjQ1NTEyNzEz.DxyLvg.dIFmBaV2fZzlzNAzkaWmwHSyoiw");
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
