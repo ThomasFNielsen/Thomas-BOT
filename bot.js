@@ -91,33 +91,5 @@ client.on('guildMemberAdd', member => {
     });
 });
 
-const newUsers = [];
-});
-
-  if (newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-    guild.channels.find(channel => channel.name === "nye-medlemmer").send("test123\n" + userlist);
-    newUsers[guild.id].clear();
-  }
-});
-
-client.on("message", (message) => {
-  if (message.content.startsWith("ping")) {
-    message.channel.send("pong!");
-  }
-});
-
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
-  newUsers[guild.id].set(member.id, member.user);
-
-  if (newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-    guild.channels.find(channel => channel.name === "nye-medlemmer").send("Welcome our new users!\n" + userlist);
-    newUsers[guild.id].clear();
-  }
-});
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
