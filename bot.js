@@ -124,6 +124,7 @@ client.on("guildMemberRemove", (member) => {
 });
 
 client.login("NTMxMDk4MzgxNjQ1NTEyNzEz.DxyLvg.dIFmBaV2fZzlzNAzkaWmwHSyoiw");
+});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
