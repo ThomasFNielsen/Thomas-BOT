@@ -71,35 +71,5 @@ client.on('ready', () => {
     });
 });
 
-client.on('guildMemberAdd', member => {
-    // To compare, we need to load the current invite list.
-    member.guild.fetchInvites().then(guildInvites => {
-        // This is the *existing* invites for the guild.
-        const ei = invites[member.guild.id];
-
-        // Update the cached invites
-        invites[member.guild.id] = guildInvites;
-
-        // Look through the invites, find the one for which the uses went up.
-        const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-
-        console.log(invite.code)
-
-        if (invite.code === "PBE7Qnc") {
-            return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
-        }
-    });
-});
-
-const newUsers = [];
-});
-
-  if (newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-    guild.channels.find(channel => channel.name === "nye-medlemmer").send("test123\n" + userlist);
-    newUsers[guild.id].clear();
-  }
-});
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
