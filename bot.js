@@ -101,9 +101,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const newUsers = [];
-
-client.on("ready", () => {
-  console.log("I am ready!");
 });
 
   if (newUsers[guild.id].size > 10) {
