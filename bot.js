@@ -3,6 +3,11 @@ const client = new Discord.Client();
 const Welcome = require("nye-medlemmer");
 bot.commands = new Discord.Collection();
 
+
+client.on("ready", () => {
+  console.log("I am ready!");
+});
+
 Welcome(bot, {
     privatemsg : "Bem vindo",
     publicmsg : "Bem vindo Leias as <#526109716972044310>",
@@ -20,10 +25,6 @@ bot.on('guildMemberAdd', member => {
       .addField('Membro de numero:', member.guild.memberCount)
       .setTimestamp()
   bot.channels.get('526109716972044310').send(embed)
-});
-
-client.on("ready", () => {
-  console.log("I am ready!");
 });
 
 client.on('message', message => {
