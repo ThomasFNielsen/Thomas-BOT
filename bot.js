@@ -1,28 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Welcome = require("nye-medlemmer");
 
 client.on("ready", () => {
   console.log("I am ready!");
-});
-
-Welcome(bot, {
-    privatemsg : "Test123",
-    publicmsg : "Hej123",
-    publicchannel : "nye-medlemmer"
-})
-
-client.on('guildMemberAdd', member => {
-  if (member.guild.id !== "526109716418527241") return;
-  let avatar = member.user.avatarURL
-  let embed = new Discord.RichEmbed()
-      .setColor('#ba15ff')
-      .setThumbnail(avatar)
-      .setTitle("**Teste**")
-      .addField('Bem vindo(a)!', ` Ao servidor ${member}`)
-      .addField('Membro de numero:', member.guild.memberCount)
-      .setTimestamp()
-  client.channels.get('526109716972044310').send(embed)
 });
 
 client.on('message', message => {
