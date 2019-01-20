@@ -9,9 +9,9 @@ client.on("ready", () => {
 });
 
 Welcome(bot, {
-    privatemsg : "Bem vindo",
-    publicmsg : "Bem vindo Leias as <#526109716972044310>",
-    publicchannel : "526109716972044310"
+    privatemsg : "Test123",
+    publicmsg : "Hej123",
+    publicchannel : "nye-medlemmer"
 })
 
 bot.on('guildMemberAdd', member => {
