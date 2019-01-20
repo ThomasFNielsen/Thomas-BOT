@@ -12,7 +12,7 @@ client.on("guildMemberAdd", (member) => {
   if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
   newUsers[guild.id].set(member.id, member.user);
 
-  if (newUsers[guild.id].size > 10) {
+  if (newUsers[guild.id].size > 1) {
     const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
     guild.channels.find(channel => channel.name === "nye-medlemmer").send("test123\n" + userlist);
     newUsers[guild.id].clear();
