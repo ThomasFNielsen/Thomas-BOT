@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const newUsers = [];
+
+client.on("ready", () => {
+  console.log("I am ready!");
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -14,10 +17,6 @@ client.on("guildMemberAdd", (member) => {
     guild.channels.find(channel => channel.name === "nye-medlemmer").send("test123\n" + userlist);
     newUsers[guild.id].clear();
   }
-});
-
-client.on("ready", () => {
-  console.log("I am ready!");
 });
 
 client.on('message', message => {
