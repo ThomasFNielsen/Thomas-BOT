@@ -3,10 +3,6 @@ const client = new Discord.Client();
 
 const newUsers = [];
 
-client.on("ready", () => {
-  console.log("I am ready!");
-});
-
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
