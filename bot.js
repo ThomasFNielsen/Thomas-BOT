@@ -20,7 +20,7 @@ client.on ("message", (message) => {
     mentionMessage = message.content.slice (8);
     mention.sendMessage (mentionMessage);
     message.channel.send ("Beskeden er sendt!");
-}    
+});  
 
 client.on('message', message => {
     if (message.content === 'Hey') {
