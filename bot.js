@@ -5,6 +5,28 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
+const prefix = "tb!";
+client.on ("message", (message) => {
+
+  msg = message.content.toLowerCase();
+  
+  if (message.author.bot) return;
+  
+  mention = message.mentions.users.first();
+  
+  if (msg.startWith (prefix + "send")) {
+    if (mention == null) { return; }
+    message.delete();
+    mentionMessage = message.content.slice (8);
+    mention.sendMessage (mentionMessage);
+    message.channel.send ("Beskeden er sendt!");
+});  
+
+client.on('message', message => {
+    if (message.content === 'Hey') {
+    	message.channel.send(message.author + ' - Heeey, min ven!');
+});
+
 client.on('message', message => {
     if (message.content === 'hey') {
     	message.channel.send(message.author + ' - Heeey, min ven!');
