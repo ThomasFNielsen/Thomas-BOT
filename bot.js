@@ -87,6 +87,7 @@ client.on('guildMemberAdd', member => {
         if (invite.code === "PBE7Qnc") {
             return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
         }
+    });
 });
 
 // THIS  MUST  BE  THIS  WAY
