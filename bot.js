@@ -5,9 +5,6 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-// Initialize the invite cache
-const invites = {};
-
 // A pretty useful method to create a delay without blocking the whole script.
 const wait = require('util').promisify(setTimeout);
 
@@ -32,16 +29,7 @@ client.on('guildMemberAdd', member => {
         // Update the cached invites
         invites[member.guild.id] = guildInvites;
 
-        // Look through the invites, find the one for which the uses went up.
-        const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-
-        console.log(invite.code)
-
-        if (invite.code === "PBE7Qnc") {
-            return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
-        }
-    });
-});
+        // Look through the invites, find the one 
 
 client.on('message', message => {
     if (message.content === 'Hey') {
