@@ -45,7 +45,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', message => {
     if (message.content === 'Hey') {
-    	message.channel.send(message.author + ' - || Heeey <:Love:537271965023731742> ||');
+    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
     }
 });
 
