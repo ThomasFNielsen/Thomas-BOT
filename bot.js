@@ -108,5 +108,100 @@ exports.run = (bot, message, args, func) => {
 
 }
 
+exports.run = (bot, message, args, func) => {
+
+    // Return Statements
+    if (!message.member.roles.find('name', 'Owner')) return func.embed(message.channel, '**This command requires the Owner role**', 120000) // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
+    if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') return func.embed(message.channel, '**Please mention a channel**\n > *~setChannel #channel*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+
+    // Fetch the new channel they mentioned
+    let newChannel;
+    if (args.join(" ").toUpperCase() === 'NONE') newChannel = ''; // If they wrote the word none, it sets newChannel as empty.
+    else newChannel = message.mentions.channels.first().id; // If they actually mentioned a channel, it will set newChannel as that.
+
+    // Update Channel
+    db.updateText(`messageChannel_${message.guild.id}`, newChannel).then(i => {
+        func.embed(message.channel, `**Successfully updated logging channel to ${message.mentions.channels.first()}**`) // Finally, send in chat that they updated the channel.
+    })
+
+} // Lets set the DM channel now, we can use this code we just wrote as a template.
+
+exports.run = (bot, message, args, func) => {
+
+    // Variables - These are all the variables that we will be using.
+    let channel
+    let dmText
+    let joinText
+    let leaveText
+
+    // First, we need to fetch the message channel
+    db.fetchObject(`messageChannel_${message.guild.id}`).then(channelIDFetched => {
+
+        // Verify Arguments - If the text is blank, that means it hasn't been defined yet.
+        if (!message.guild.channels.get(channelIDFetched.text)) channel = '*none*'
+        else channel = message.guild.channels.get(channelIDFetched.text)
+        // What is happening here is that it is trying to see if the CHANNEL ID stored in channelIDFetched.text is a valid channel in the guild, if not it sets channel to none, if it is it sets channel to the channel
+
+        // Next, we can fetch the Join DM Text
+        db.fetchObject(`joinMessageDM_${message.guild.id}`).then(joinDMFetched => {
+
+            // Verify Arguments - The same thing is happening here as the last verification. This time it's just checking it joinedDMFetched.text is empty
+            if (!joinDMFetched.text) dmText = '*none*'
+            else dmText = joinDMFetched.text
+
+            // Now, we want to fetch the join text for the server - accidently put a comma instead of a period there, make sure you don't do that.
+            db.fetchObject(`joinMessage_${message.guild.id}`).then(joinTextFetched => {
+
+                // Verify Arguments - Same thing as the last one.
+                if (!joinTextFetched.text) joinText = '*none*'
+                else joinText = joinTextFetched.text
+
+                // Finally, we can fetch the message thats sent when someone leaves
+                db.fetchObject(`leaveMessage_${message.guild.id}`).then(leaveTextFetched => {
+
+                    // Verify Arguments - Same thing as the last one.
+                    if (!leaveTextFetched.text) leaveText = '*none*'
+                    else leaveText = leaveTextFetched.text
+
+                    // Make sure that all of the fetchObjects are nested inside eachother, or else it might lock the database if it's doing it all at the same time.
+                    // Now, lets form a response from all the data we collected.
+                    let response = `**Logging Channel**\n > ${channel}\n\n` // This is the first line, make sure to use \n for new lines
+                    response += `**Welcome DM Text**\n > ${dmText}\n\n` // Make sure you are using += not = when adding to the string.
+                    response += `**Welcome Channel Text**\n > ${joinText}\n\n` // This is the third line.
+                    response += `**Leave Channel Text**\n > ${leaveText}\n\n` // Now, lets send the embed using the new function we made earlier.
+
+                    func.embed(message.channel, response) // Lets test it now.
+
+                })
+
+
+            })
+
+        })
+
+    })
+
+}
+
+exports.run = (bot, message, args, func) => {
+
+    // Return Statements
+    if (!message.member.roles.find('name', 'Owner')) return func.embed(message.channel, '**This command requires the Owner role**', 120000) // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
+    if (!args.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return func.embed(message.channel, '**Please mention a channel**\n > *~setdm message*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+    // ^^^ This returns if they didnt type any dedscription
+
+    // Fetch the new channel they mentioned
+    let newMessage;
+    if (args.join(" ").toUpperCase() === 'NONE') newMessage = ''; // If they wrote the word none, it sets newMessage as empty.
+    else newMessage = args.join(" ").trim(); // If they didn't write none, set what they wrote as the message
+
+    // This will update the .text of the joinMessageDM_guildID object.
+    db.updateText(`joinMessageDM_${message.guild.id}`, newMessage).then(i => {
+        func.embed(message.channel, `**Successfully updated DN welcome text to:**\n > *${args.join(" ").trim()}*`) // Finally, send in chat that they updated the channel.
+    })
+
+} // Again, we can copy and paste this. 
+// Now, lets test to see if it updated.
+
 // THIS  MUST  BE  THIS  WAY 
 client.login(process.env.BOT_TOKEN);
