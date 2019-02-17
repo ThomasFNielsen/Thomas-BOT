@@ -5,10 +5,6 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('guildMemberAdd', (guildMember) => {
-   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "MEDLEM"));
-}
-
 client.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
