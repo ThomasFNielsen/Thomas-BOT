@@ -10,7 +10,7 @@ client.on('message', (message) => {
   guildMember.addRole('MEDLEM');
 });
 
-client.on('message', message => {
+bot.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
     }
