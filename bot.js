@@ -5,7 +5,7 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('message', (message) => {
+bot.on('message', (message) => {
   const guildMember = message.member;
   guildMember.addRole('MEDLEM');
 });
