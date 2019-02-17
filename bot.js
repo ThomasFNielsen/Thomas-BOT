@@ -5,9 +5,9 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('serverNewMember', function(server, user) {
-     user.addTo(server.roles.get("name", "MEDLEM"));
-});
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "MEDLEM"));
+}
 
 client.on('message', (message) => {
     if (message.content === 'Hey') {
