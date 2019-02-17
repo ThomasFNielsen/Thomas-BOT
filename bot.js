@@ -5,8 +5,6 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-const Discord = require('discord.js'); 
-
 client.on('message', (message) => {
   const guildMember = message.member;
   guildMember.addRole('MEDLEM');
