@@ -5,11 +5,12 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on (guildMemberAdd", member => {
-    var role = member.guild.roles.find ("name", "MEDLEM");
-    member.addrole (role);
+const Discord = require('discord.js'); 
 
-})
+client.on('message', (message) => {
+  const guildMember = message.member;
+  guildMember.addRole('MEDLEM');
+});
 
 client.on('message', message => {
     if (message.content === 'Hey') {
