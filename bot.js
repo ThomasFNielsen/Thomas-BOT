@@ -43,49 +43,49 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', message => {
     if (message.content === 'Hey') {
-    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'hey') {
-    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'Goddag') {
-    	message.channel.send(message.author + ' - Goddag <:Love:537271965023731742>');
+    	message.channel.send('Goddag <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'goddag') {
-    	message.channel.send(message.author + ' - Goddag <:Love:537271965023731742>');
+    	message.channel.send('Goddag <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'Godmorgen') {
-    	message.channel.send(message.author + ' - Godmorgen <:Love:537271965023731742> - Har du sovet godt?');
+    	message.channel.send('Godmorgen <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'godmorgen') {
-    	message.channel.send(message.author + ' - Godmorgen <:Love:537271965023731742> - Har du sovet godt?');
+    	message.channel.send('Godmorgen <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'Godaften') {
-    	message.channel.send(message.author + ' - Godaften <:Love:537271965023731742> - Har du haft en god dag?');
+    	message.channel.send('Godaften <:Love:537271965023731742> - ' + message.author);
     }
 });
 
 client.on('message', message => {
     if (message.content === 'godaften') {
-    	message.channel.send(message.author + ' - Godaften <:Love:537271965023731742> - Har du haft en god dag?');
+    	message.channel.send('Godaften <:Love:537271965023731742> - ' + message.author);
     }
 });
 
