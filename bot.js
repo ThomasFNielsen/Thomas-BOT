@@ -54,6 +54,30 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.content === 'Heeey') {
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === 'heeey') {
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === 'heey') {
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === 'Heey') {
+    	message.channel.send('Heeey <:Love:537271965023731742> - ' + message.author);
+    }
+});
+
+client.on('message', message => {
     if (message.content === 'Goddag') {
     	message.channel.send('Goddag <:Love:537271965023731742> - ' + message.author);
     }
