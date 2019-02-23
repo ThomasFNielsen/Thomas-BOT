@@ -7,7 +7,7 @@ client.on("ready", () => {
 });
 
 Welcome(bot, {
-    public.msg('test test test 123');
+    message.private.msg('test test test 123');
     public.channel('531141784600838144')
     })
 });
