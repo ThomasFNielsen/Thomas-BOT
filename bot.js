@@ -6,10 +6,6 @@ client.on("ready", () => {
 });
 
 client.on('guildMemberAdd', member => {
-   bot.channels.find("name","nye-medlemmer").send("test")
-});
-
-client.on('guildMemberAdd', member => {
    member.send("Welcome to the server!");
 });
 
