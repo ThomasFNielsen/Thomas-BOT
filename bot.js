@@ -5,28 +5,9 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('guildMemberAdd', member => {
-client.on('message', 
-
-var role = member.guild.roles.find('name', 'Medlem'); // Variable to get channel ID
-member.addRole(role); // Adds the default role to members
-
-member.guild.channels.get('531141784600838144').send({embed: {
-color: 3447003,
-title: "ThomasFNielsen Welcome Bot!",
-url: "WEBSITE URL",
-description: "Welcome *" + member + "* to the ThomasFNielsen discord server!",
-fields: [{
-    name: "Information",
-    value: "Some info on the server"
-  }
-],
-timestamp: new Date(),
-footer: {
-  icon_url: client.user.avatarURL,
-  text: "© NAME OF SERVER 2018 - 2019"
-}
-}}); });
+bot.on('guildMemberAdd', member => {
+   member.send("Welcome to the server!");
+});
 
 client.on('message', (message) => {
     if (message.content === 'Hey') {
