@@ -5,10 +5,6 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('guildMemberAdd', member => {
-   member.send('Heeey <:Love:537271965023731742> ${dUser} | Hjertelig velkommen til discorden!');
-});
-
 client.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
