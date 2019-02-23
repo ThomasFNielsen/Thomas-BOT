@@ -5,8 +5,8 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('serverNewMember', function(server, user) {
-    user.addTo(server.roles.get("name", "MEDLEM"));
+bot.on('guildMemberAdd', member => {
+    member.guild.channels.get('channelID').send("Welcome"); 
 });
 
 client.on('message', (message) => {
