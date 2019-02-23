@@ -7,9 +7,9 @@ client.on("ready", () => {
 });
 
 Welcome(bot, {
-    privatemsg : "Default message, welcome anyway",
-    publicmsg : "Default Public Message where you can flag use @MEMBER to mention the newcomer",
-    publicchannel : "531141784600838144"
+    privatemsg('test jawdhuibawdhuivbawd');
+    publicmsg('test test test 123');
+    publicchannel('531141784600838144')
     })
 });
 
