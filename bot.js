@@ -1,17 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const Welcome = require("discord-welcome");
-
 client.on("ready", () => {
   console.log("Jeg er klar!");
-});
- 
-Welcome(bot, {
-    privatemsg : "Default message, welcome anyway",
-    publicmsg : "Default Public Message where you can flag use @MEMBER to mention the newcomer",
-    publicchannel : "531141784600838144"
-    })
 });
 
 client.on('message', (message) => {
