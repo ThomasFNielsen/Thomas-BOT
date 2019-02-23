@@ -14,11 +14,6 @@ Welcome(bot, {
     })
 });
 
-client.on("guildMemberRemove", (member) => {
-  const guild = member.guild;
-  if (newUsers[guild.id].has(member.id)) newUsers.delete(member.id);
-});
-
 client.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
