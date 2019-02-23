@@ -6,7 +6,7 @@ client.on("ready", () => {
 });
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('channelID').send("Welcome"); 
+    member.guild.channels.get('531141784600838144').send(message.author + ' - test'); 
 });
 
 client.on('message', (message) => {
