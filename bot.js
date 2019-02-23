@@ -1,15 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Welcome = require("discord-welcome");
 
 client.on("ready", () => {
   console.log("Jeg er klar!");
-});
-
-Welcome(bot, {
-    message.private.msg('test test test 123');
-    public.channel('531141784600838144')
-    })
 });
 
 client.on('message', (message) => {
