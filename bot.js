@@ -10,7 +10,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberAdd', member => {
-   bot.channels.find("id", "531141784600838144").send("test")
+   channels.find("id", "531141784600838144").send("test")
 });
 
 client.on('message', (message) => {
