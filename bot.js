@@ -13,9 +13,9 @@ member.addRole(role); // Adds the default role to members
 
 member.guild.channels.get('531141784600838144').send({embed: {
 color: 3447003,
-title: "**SERVER NAME** Welcome Bot!",
+title: "ThomasFNielsen Welcome Bot!",
 url: "WEBSITE URL",
-description: "Welcome *" + member + "* to the **Server name** discord server!",
+description: "Welcome *" + member + "* to the ThomasFNielsen discord server!",
 fields: [{
     name: "Information",
     value: "Some info on the server"
