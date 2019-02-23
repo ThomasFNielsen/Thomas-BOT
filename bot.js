@@ -6,7 +6,8 @@ client.on("ready", () => {
 });
 
 client.on('guildMemberAdd', member => {
-   member.send('Heeey <:Love:537271965023731742> - ${User} | Hjertelig velkommen til discorden!');
+   member.send('Heeey <:Love:537271965023731742> - member.author
+               Hjertelig velkommen til discorden!');
 });
 
 client.on('message', (message) => {
