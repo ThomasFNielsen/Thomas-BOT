@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const Welcome = require("discord-welcome");
+
 client.on("ready", () => {
   console.log("Jeg er klar!");
 });
-
-const Welcome = require("discord-welcome");
  
 Welcome(bot, {
     privatemsg : "Default message, welcome anyway",
