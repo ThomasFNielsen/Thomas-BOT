@@ -1,26 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const newUsers = [];
-
 client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on("ready", () => {
-  console.log("I am ready!");
-});
-
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  newUsers.set(member.id, member.user);
-
-  if (newUsers.size > 10) {
-    const defaultChannel = guild.channels.find(channel => channel.permissionsFor(guild.me).has("SEND_MESSAGES"));
-    const userlist = newUsers.map(u => u.toString()).join(" ");
-    defaultChannel.send("Welcome our new users!\n" + userlist);
-    newUsers.clear();
-  }
+const Welcome = require("discord-welcome");
+ 
+Welcome(bot, {
+    privatemsg : "Default message, welcome anyway",
+    publicmsg : "Default Public Message where you can flag use @MEMBER to mention the newcomer",
+    publicchannel : "531141784600838144"
+    })
 });
 
 client.on("guildMemberRemove", (member) => {
