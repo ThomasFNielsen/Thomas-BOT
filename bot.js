@@ -7,9 +7,8 @@ client.on("ready", () => {
 });
 
 Welcome(bot, {
-    privatemsg('test jawdhuibawdhuivbawd');
-    publicmsg('test test test 123');
-    publicchannel('531141784600838144')
+    public.msg('test test test 123');
+    public.channel('531141784600838144')
     })
 });
 
