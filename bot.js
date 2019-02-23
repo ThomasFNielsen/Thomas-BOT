@@ -5,7 +5,7 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-bot.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
     member.guild.channels.get('531141784600838144').send(message.author + ' - test'); 
 });
 
