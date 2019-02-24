@@ -5,8 +5,8 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('guildMemberAdd', member => {
-   member.send('Hjertelig velkommen til discorden!');
+const role = message.guild.roles.find('name', 'Medlem')
+guildMember.addRole(role);
 });
 
 client.on('message', (message) => {
