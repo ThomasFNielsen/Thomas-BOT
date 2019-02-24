@@ -6,7 +6,7 @@ client.on("ready", () => {
 });
 
 client.on('guildMemberAdd', member => {
-   member.send('Heeey <:Love:537271965023731742> - Hjertelig velkommen til discorden!');
+   member.send('Hjertelig velkommen til discorden!');
 });
 
 const role = message.guild.roles.find('name', 'MEDLEM');
