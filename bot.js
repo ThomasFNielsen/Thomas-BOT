@@ -6,6 +6,11 @@ client.on("ready", () => {
 });
 
 client.on('message', (message) => {
+  const guildMember = message.member;
+  guildMember.addRole('bot-added-role');
+});
+
+client.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
     }
