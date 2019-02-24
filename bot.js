@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const role = message.guild.roles.find('name', 'MEDLEM');
 
 client.on("ready", () => {
   console.log("Jeg er klar!");
@@ -8,9 +7,6 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', member => {
    member.send('Hjertelig velkommen til discorden!');
-});
-
-guildMember.addRole(role);
 });
 
 client.on('message', (message) => {
