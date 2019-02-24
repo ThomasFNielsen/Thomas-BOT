@@ -10,7 +10,7 @@ client.on('guildMemberAdd', member => {
 });
 
 const role = message.guild.roles.find('name', 'MEDLEM');
-guildMember.addRole(role);
+   guildMember.addRole(role);
 });
 
 client.on('message', (message) => {
