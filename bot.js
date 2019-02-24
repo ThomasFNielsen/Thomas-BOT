@@ -11,8 +11,6 @@ client.on('message', (message) => {
     }
 });
 
-client.on('guildMemberAdd', member => {
-    guildMember.addRole('422121038000947209');
 
 client.on('message', message => {
     if (message.content === 'hey') {
