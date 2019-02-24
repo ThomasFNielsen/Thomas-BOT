@@ -7,7 +7,7 @@ client.on("ready", () => {
 
 client.on('message', (message) => {
   const guildMember = message.member;
-  guildMember.addRole('bot-added-role');
+  guildMember.addRole('MEDLEM');
 });
 
 client.on('message', (message) => {
