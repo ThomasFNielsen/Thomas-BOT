@@ -5,6 +5,14 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
+client.on('guildMemberAdd', member => {
+   member.send('Heeey <:Love:537271965023731742> - Hjertelig velkommen til discorden!');
+});
+
+const role = message.guild.roles.find('name', 'MEDLEM');
+guildMember.addRole(role);
+});
+
 client.on('message', (message) => {
     if (message.content === 'Hey') {
     	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
