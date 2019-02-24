@@ -5,9 +5,8 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('message', (message) => {
-  const guildMember = message.member;
-  guildMember.addRole('MEDLEM');
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get('531141784600838144').send("Welcome"); 
 });
 
 client.on('message', (message) => {
