@@ -5,8 +5,8 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-const role = message.guild.roles.find('name', 'Medlem')
-guildMember.addRole(role);
+const role = message.guild.roles.find('name', 'MEDLEM')
+    guildMember.addRole(role);
 });
 
 client.on('message', (message) => {
