@@ -6,7 +6,7 @@ client.on("ready", () => {
 });
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('531141784600838144').send("Welcome"); 
+    member.guild.channels.get('531141784600838144').send("message.author - Hjertelig velkommen til discorden <:Love:537271965023731742>"); 
 });
 
 client.on('message', (message) => {
