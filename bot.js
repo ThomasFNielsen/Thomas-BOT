@@ -65,55 +65,19 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === 'heeey') {
-    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
+    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
     }
 });
 
 client.on('message', message => {
     if (message.content === 'heey') {
-    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
+    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
     }
 });
 
 client.on('message', message => {
     if (message.content === 'Heey') {
-    	message.channel.send(message.author + ' - Heeey <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'Goddag') {
-    	message.channel.send(message.author + ' - Goddag <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'goddag') {
-    	message.channel.send(message.author + ' - Goddag <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'Godmorgen') {
-    	message.channel.send(message.author + ' - Godmorgen <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'godmorgen') {
-    	message.channel.send(message.author + ' - Godmorgen <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'Godaften') {
-    	message.channel.send(message.author + ' - Godaften <:Love:537271965023731742>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'godaften') {
-    	message.channel.send(message.author + ' - Godaften <:Love:537271965023731742>');
+    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
     }
 });
 
