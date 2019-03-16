@@ -51,7 +51,7 @@ client.on('message', (message) => {
 });
 
 client.on('message', message => {
-    if (message.content === '<:Hey:554322979182608404> ') {
+    if (message.content === '<:Hey:554322979182608404>') {
     	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
     }
 });
