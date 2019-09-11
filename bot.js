@@ -94,7 +94,7 @@ client.on('message', (message) => {
 
 client.on('message', (message) => {
     if (message.content === '!flyt') {
-    	message.channel.send('@ThomasFNielsen - message.author vil gerne flyttes til et af dine rum.');
+    	message.channel.send('@ThomasFNielsen - ' message.author 'vil gerne flyttes til et af dine rum.');
     }
 });
 
