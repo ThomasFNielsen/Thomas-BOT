@@ -8,7 +8,7 @@ client.on("ready", () => {
 
 client.on('message', (message) => {
     if (message.content === '!move') {
-    	message.channel.send('@Lil Thomas - ' + message.author + ' would like to be moved to one of your rooms.');
+    	message.channel.send(+ message.author + ' would like to be moved to one of your rooms.');
     }
 });
 
