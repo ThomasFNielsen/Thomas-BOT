@@ -6,10 +6,6 @@ client.on("ready", () => {
   console.log("Jeg er klar!");
 });
 
-client.on('guildMemberAdd', member => {
-    member.guild.channels.get('531141784600838144').send(member + " - <:Hey:554322979182608404> & velkommen til discorden."); 
-});
-
 const wait = require('util').promisify(setTimeout);
 
 client.on('ready', () => {
@@ -39,62 +35,15 @@ client.on('guildMemberAdd', member => {
         console.log(invite.code)
 
         if (invite.code === "PBE7Qnc") {
-            return member.addRole(member.guild.roles.find(role => role.name === "MEDLEM"));
+            return member.addRole(member.guild.roles.find(role => role.name === <695677533512925325> Member"));
         }
     });
 });
 
-client.on('message', (message) => {
-    if (message.content === 'Hey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === '<:Hey:554322979182608404>') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'hey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'Heeey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'heeey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'heey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', message => {
-    if (message.content === 'Heey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
 
 client.on('message', (message) => {
-    if (message.content === 'Hey') {
-    	message.channel.send(message.author + ' - <:Hey:554322979182608404>');
-    }
-});
-
-client.on('message', (message) => {
-    if (message.content === '!flyt') {
-    	message.channel.send('@ThomasFNielsen - ' + message.author + ' vil gerne flyttes op i et af ThomasFNielsens rum.');
+    if (message.content === '!move') {
+    	message.channel.send('@<695677533512925325> Lil Thomas - ' + message.author + ' would like to be moved to one of your rooms.');
     }
 });
 
