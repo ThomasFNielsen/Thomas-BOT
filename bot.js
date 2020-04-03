@@ -43,7 +43,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', (message) => {
     if (message.content === '!move') {
-    	message.channel.send('@<695677533512925325> Lil Thomas - ' + message.author + ' would like to be moved to one of your rooms.');
+    	message.channel.send('@Lil Thomas - ' + message.author + ' would like to be moved to one of your rooms.');
     }
 });
 
