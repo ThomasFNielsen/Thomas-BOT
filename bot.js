@@ -35,7 +35,7 @@ client.on('guildMemberAdd', member => {
         console.log(invite.code)
 
         if (invite.code === "PBE7Qnc") {
-            return member.addRole(member.guild.roles.find(role => role.name === <695677533512925325> Member"));
+            return member.addRole(member.guild.roles.find(role => role.name === "<695677533512925325> Member"));
         }
     });
 });
